@@ -1,0 +1,30 @@
+
+Pragmatic Programmer's Guide - Programming Ruby
+
+chap 01 - Ruby.new
+chap 02 - Classes, Objects, and Varialbles
+chap 03 - Containers, Blocks, and Iterators
+chap 04 - Standard Types
+chap 05 - More About Methods
+chap 06 - Expressions
+chap 07 - Exceptions, Catch and Throw
+chap 08 - Modules
+chap 09 - Basic Input and Output
+chap 10 - Threads and Processes
+chap 11 - When Trouble Strikes
+chap 12 - Ruby and Its World
+chap 13 - Ruby and the Web
+chap 14 - Ruby TK
+chap 15 - Ruby and Microsoft Windows
+chap 16 - Extending Ruby
+chap 17 - The Ruby Language
+chap 18 - Classes and Objects
+chap 19 - Locking Ruby in the Safe
+chap 20 - Reflection, ObjectSpace, Distributed Ruby
+chap 21 - Built in Classes and Methods
+chap 22 - Standard Library
+chap 23 - Object-Oriented Design Libraries
+chap 24 - Network and Web Libraries
+chap 25 - Microsoft Windows Support
+chap 26 - Embedded Documentation
+chap 27 - Interative Ruby Shell

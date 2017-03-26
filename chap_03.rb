@@ -78,3 +78,32 @@ h     # => { "cow" => "bovine", "cat" => 99, 12 => "dodecine", "donkey" => "asin
 # so can not easily use them as a stack or queues
 # still hashes most common used data structure in Ruby
 
+
+# methods needed to implement the songlist jukebox demo example
+# append(aSong) => append the given song to the list
+# deleteFirst() => remove the first song from the list, returning the song
+# deleteLast() => remove the last song from the list, returning the song
+# [anIndex] => return the song identified by anIndex which may by an integer index or song title
+
+# the ability to append songs to the end and remove from both the front and end
+# suggests a dequeue -- a double ended queue
+
+class SongList
+  def initialize
+    @songs = Array.new
+  end
+end
+class SongList
+  def append(aSong)
+    @songs.push(aSong)
+    self
+  end
+end
+class SongList
+  def deleteFirst
+    @songs.shift
+  end
+  def deleteLast
+    @songs.pop
+  end
+end

@@ -1,6 +1,6 @@
 # CHAP 02 - CLASSES, OBJECTS, AND VARIALBES
 
-=begin
+
 class Song
   def initialize(name, artist, duration)
     @name     = name
@@ -170,7 +170,7 @@ aSong.durationInMinutes                   # 252
 # we are sheilding the rest of the world from the implementation of our class
 # allows us to change things in future without impacting the lines of code that use our class
 
-=end
+
 # CLASS VARIABLE AND CLASS methods
 
 # sometimes classes themselves need to have their own state

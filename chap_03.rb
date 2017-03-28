@@ -1,7 +1,7 @@
 # CHAP 3 - CONTAINTERS, BLOCKS, AND ITERATORS
 
 # ARRAYS
-
+=begin
 a = [ 3.14, "pie", 99 ]
 a.type      # => Array
 a.length    # => 3
@@ -88,17 +88,21 @@ h     # => { "cow" => "bovine", "cat" => 99, 12 => "dodecine", "donkey" => "asin
 # the ability to append songs to the end and remove from both the front and end
 # suggests a dequeue -- a double ended queue
 
+=end
+
 class SongList
   def initialize
     @songs = Array.new
   end
 end
+
 class SongList
   def append(aSong)
     @songs.push(aSong)
     self
   end
 end
+
 class SongList
   def deleteFirst
     @songs.shift
@@ -107,3 +111,65 @@ class SongList
     @songs.pop
   end
 end
+
+list = SongList.new
+append(Song.new("title1", "artist1", 1))
+puts list
+
+# our next method is [], which accesses elements by index. if the index is a number
+# we just return the element at that postion
+class SongList
+  def [](key)
+    if key.kind_of?(Integer)
+      @songs[key]
+    else
+      for i in 0...@songs.length
+        return @songs[i] if key == @songs[i].name
+      end
+    end
+    return nil
+  end
+end
+
+# we need to add the ability to look up song by title, which involves
+# scanning through songs in list checking the title of each
+# above is one solution using a for loop in the else portion of the if statement
+# below is another option using an iterator
+# here the find method, an iterator from the Enumerable class, replaces the for loop above
+# it asks the array to apply a test to each of its members
+
+class Songlist
+  def [](key)
+    if key.kind_of?(Integer)
+      @songs[key]
+    else
+      result = @songs.find { |aSong| key == aSong.name }
+    end
+    return result
+  end
+end
+
+# from above we can use and if statement modifer to shorten the code even more
+class SongList
+  def [](key)
+    return @songs[key] if key.kind_of?(Integer)
+    return @songs.find { |aSong| aSong.name == key }
+  end
+end
+
+
+# IMPLEMENTING ITERATORS
+
+# iterator is simply a method that can invoke a block of code
+# a block in Ruby is a way of grouping statement but
+# not in conventional way as we might see in Java, C, or Perl
+
+# first, a block may appear only in the source adjacent to amethod call
+# the block is written starting on the same line as the methods parameter
+# second,  the code in the block is not executed at the time it is encountered
+# instead Ruby remembers the context in which the block appears and then enters the method
+# within the method, the block may be invoked almost as if it were a method itself
+# whenever a yield is executed it invokes the code in the block,
+# when the block exits, control picks back up immediatly after the yield
+
+
